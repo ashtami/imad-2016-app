@@ -1,0 +1,45 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<script src="jsTaxCalc.js"></script>
+<html>
+<head>
+<title>Income Tax Calculator</title>
+<link rel="stylesheet" href="SmartStyles.css"/>	
+<meta name="" content="">
+</head>
+<body onload="TxtIncome.focus()">
+
+
+   	<!--<div  class="GlowingBox" style="width: 96%; height: 20px; margin: auto; background:#581360;color: #ffffff; font-size: 14pt; font-weight: bold;">&nbsp;&nbsp;Smart Form16 :: Income Tax Computation</div>-->
+	<div class="GlowingBox" id="InnerBox" style="  
+	    position: relative; 
+	    width:35%;height:300px;  
+	    padding:2px;background:#FFFFFF; 
+	    border:1px solid #2266AA; 
+	    z-index:100">
+
+	    <table width="100%">
+	    	<tr bgcolor="#512578">
+	    		<td colspan="2" style="color:#ffffff;font-size: 14pt;text-align: center;font-weight: bold;"> Income Tax Calculator for FY 2016 - 17</td>
+	    	</tr>
+	    	<tr><td colspan="2"></td></tr>
+	    	<tr>
+	    		<td>Category</td><td>
+	    			<select id="cbCategory" style="width: 186px"  onchange="computeTax();"> 
+	    				<option value='1' selected="True">Individual</option>
+	    				<option value='2' >Senior Citizen</option>
+	    				<option value='3' >Super Senior Citizen</option>
+	    			</select></td></tr>
+	    	<tr><td>Taxable Income</td><td><input type="text" id="TxtIncome" value="" oninput ="computeTax()" onblur="this.value=fNumber(this.value)"/></td></tr>
+	    	<tr><td>Income Tax</td><td><input type="text" id="TxtTax" value="" style="text-align: right"/></td></tr>
+	    	<tr><td>Rebate U/s 27A</td><td><input type="text" id="TxtRebate" value="" style="text-align: right"/></td></tr>
+	    	<tr><td>Cess</td><td><input type="text" id="TxtCess" value="" style="text-align: right"/></td></tr>
+	    	<tr><td>Net Tax Payable</td><td><input type="text" id="TxtNetTax" value="" style="text-align: right;font-weight: bold;"/></td></tr>
+	    	<tr><td colspan="2" id="Remarks" style="font-size: 9pt;text-align: center;color: #2507f8"></td></tr>
+	    	</tr>
+	    	<tr><td colspan="2"></td></tr>
+	    	<tr><td colspan="2" align="center"><input type="submit" name="cmdCompute" value="Compute" onclick="computeTax()" style="width: 150px"/>&nbsp;&nbsp;<input type="reset" name="cmdReset" value="Reset" onclick="ResetText()" style="width: 150px"/></td></tr>
+	    </table>
+		<p align="center"><b>ashtamim@gmail.com - NPTEL::IMAD</b></p>
+	</div>
+</body>
+</html>
