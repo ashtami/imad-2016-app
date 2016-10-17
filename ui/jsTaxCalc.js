@@ -85,9 +85,10 @@ try
 		//alert("Get Value of : "+ ElementID + "="+(document.getElementById(ElementID).value));
 		//return(Val(stripComma(document.getElementById(ElementID).value)));
 		//alert("Get Value of : "+ ElementID + "="+(document.getElementById(ElementID).value));
-		if (document.getElementById(ElementID)!=null)
+		if (document.getElementById(ElementID)!==null)
 		{
-			if (document.getElementById(ElementID).value !=null && document.getElementById(ElementID).value !='')
+
+if (document.getElementById(ElementID).value !==null && document.getElementById(ElementID).value !=='')
 					return(parseInt(stripComma(document.getElementById(ElementID).value)));
 			else
 			{
@@ -102,7 +103,7 @@ try
 	}	
 function computeTax()
 {
-	Income=GetValue("TxtIncome")
+	Income=GetValue;
 	//alert(Income);
 	a10=500000;	a20=0;	a30=0;
 	t10=0;	t20=0;	t30=0;
@@ -144,7 +145,7 @@ function computeTax()
 					a20=Income; 
 			}	
 			else{
-				a10=Income
+				a10=Income;
 				}
 				
 				t10=(a10*10)/100;
