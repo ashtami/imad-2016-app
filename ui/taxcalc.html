@@ -3,12 +3,7 @@
 
 function fNumber(n) 
 {
-/*	//alert(n);
-	if (n==250000)
-		//alert(n);
-	n=stripNonDigits(n);*/
 	s=stripComma(n);
-	//alert("External script function triggered with parameter: "+s + " Length"+s.length);
 	m="";
 	m=s.substr(0,1);
 	if (m !="-")
@@ -44,7 +39,6 @@ function fNumber(n)
 }
 function stripComma(n)
 {
-	//alert("Inside stripComma function, Parameter valaue: x"+n+"x");
 try
 	{
 		n=n.toString();
@@ -70,7 +64,6 @@ try
 					break;
 			}
 		}
-		//alert("returning stripComma function, Return valaue: " + n + " -> " +s);
 		return(s);
 	}
 	catch (e)
@@ -79,15 +72,12 @@ try
 	}
 }
 	function setValue(ElementID, Newvalue){
-		//document.getElementById("S3").value=getValue("S1")+getValue("S2");
-		//alert("Setting Value for " +ElementID + " : "+Newvalue);
+
 		document.getElementById(ElementID).value= fNumber(Newvalue.toString());
-		//document.all.sal1.innerHTML  =Newvalue;
+		
 	}
 	function GetValue(ElementID){
-		//alert("Get Value of : "+ ElementID + "="+(document.getElementById(ElementID).value));
-		//return(Val(stripComma(document.getElementById(ElementID).value)));
-		//alert("Get Value of : "+ ElementID + "="+(document.getElementById(ElementID).value));
+
 		if (document.getElementById(ElementID)!==null)
 		{
 
@@ -116,7 +106,7 @@ function computeTax()
 		rR=0;
 	else
 		rR=5000;
-		//alert("Getting Category" + document.getElementById("cbCategory").value);
+
 	switch (GetValue("cbCategory"))
 	{
 		case 2:
@@ -171,7 +161,6 @@ function computeTax()
 						sc=0;
 						}
 				}
-				//alert("Rebate "+rR);
 				cess=(tax*2)/100;
 				cess+=(tax*1)/100;
 				cess=Math.round(cess);
@@ -209,15 +198,7 @@ function computeTax()
 			setValue("TxtCess", 0);
 			setValue("TxtNetTax",0);			
 		}
-		//alert("0. Compute Tax "+tax);
-		//alert("1. Compute Tax "+ fNumber(a10) + " @ " + fNumber(p10) + "% = " + fNumber(t10));
-		//alert("2. Compute Tax "+ fNumber(a20) + " @ " + fNumber(p20) + "% = " + fNumber(t20));
-		//alert("3. Compute Tax "+ fNumber(a30) + " @ " + fNumber(p30) + "% = " + fNumber(t30));
-		//alert ("1. Compute Tax : Upto Rs. " + fNumber(nl) + " > NIL, ");
-		//Upto Rs. 2,50,000 > NIL, 2,50,000 @ 10% = 25,000, 67,850 @ 20% = 13,570, Total = 39,727/-
-		//alert ("computeTax: Upto Rs. " + fNumber(nl) + " > NIL, "+ fNumber(a10) + " @ " + fNumber(p10) + "% = " + fNumber(t10)+" | "+ fNumber(a20) + " @ " + fNumber(p20) + "% = " + fNumber(t20)+" | "+ fNumber(a30) + " @ " + fNumber(p30) + "% = " + fNumber(t30) + ", Cess ="+ cess + ", Total = "+GetString("TTP") + "/-");
 
-		 
 		 document.getElementById("Remarks").innerHTML=Remarks;
 }
 function ResetText()	
