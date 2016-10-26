@@ -121,8 +121,12 @@ function computeTax()
 	
 		if (Income>NilLimit)
 		{
-			Income-=NilLimit;
-			t10=500000-NilLimit;
+			Income-=NilLimit; //Taxable income
+			if (Income<500000)
+				t10=Income;
+			else
+				t10=500000-NilLimit;
+				
 			if (Income>t10)
 			{
 				a10=t10; //Income-(l10)
